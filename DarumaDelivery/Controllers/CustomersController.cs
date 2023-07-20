@@ -56,9 +56,9 @@ namespace DarumaDelivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerID,LastName,FirstName,ShippingAddress,RegisterID,DOB")] Customer customer)
+        public async Task<IActionResult> Create([Bind("CustomerID,LastName,FirstName,ShippingAddress,Email,RegisterID,DOB")] Customer customer)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
@@ -88,14 +88,14 @@ namespace DarumaDelivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomerID,LastName,FirstName,ShippingAddress,RegisterID,DOB")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerID,LastName,FirstName,ShippingAddress,Email,RegisterID,DOB")] Customer customer)
         {
             if (id != customer.CustomerID)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
