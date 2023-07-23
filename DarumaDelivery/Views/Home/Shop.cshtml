@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
 }
 <title>DarumaDelivery</title>
 <style>
@@ -29,7 +31,6 @@
     }
 </style>
 
-
 <div class="container container-fluid">
     <h1 class="double">DarumaDeliver</h1>
     <img src="https://images.arigatotravel.com/wp-content/uploads/2017/09/06080254/ramen-banner.jpg" class="rounded-3" style="width:1255px; height:500px;" />
@@ -41,19 +42,40 @@
     <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/Home/Contacts'">Contacts</button>
     <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/Home/About'">About us</button>
 </div>
-<h1>@ViewData["Title"]</h1>
-
-<div class="container mt-xl-3 rounded-3" style="color:ghostwhite">
-    <p style="background-color: firebrick;">We collect personal information from you, including information about your:</p>
-    <p style="outline-color: azure; outline-style:auto; outline-width:3px;">◊ name</p>
-    <p style="outline-color: azure; outline-style:auto; outline-width:3px;">◊ location</p>
-    <p style="outline-color: azure; outline-style:auto; outline-width:3px;">◊ billing or purchase information</p>
-    <p> We collect your personal information in order to:</p>
-    <p> Deliver to you as fast as possible and enhance user experience for long-term use</p>
-    <p> We keep your information safe by storing the data in an encrypted database and only allowing certain staff to use it when you order .</p>
-
-    <p>
-        We keep your information for two years at which point we securely destroy it by securely erasing the data.
-        You have the right to ask for a copy of any personal information we hold about you, and to ask for it to be corrected if you think it is wrong. If you’d like to ask for a copy of your information, or to have it corrected, please contact us at darumadeliver@gmail.com.
-    </p>
-</div>
+<div class="row">
+    <div>
+        <img src="https://images.arigatotravel.com/wp-content/uploads/2017/09/06080254/ramen-banner.jpg" />
+        <h4>Ramen 1</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+        </div>
+        <p>$30.00</p>
+    </div>
+    <div>
+        <img src="https://images.arigatotravel.com/wp-content/uploads/2017/09/06080254/ramen-banner.jpg" />
+        <h4>Ramen 2</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <p>$30.00</p>
+    </div>
+    <div>
+        <img src="https://images.arigatotravel.com/wp-content/uploads/2017/09/06080254/ramen-banner.jpg" />
+        <h4>Ramen 3</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <p>$45.00</p>
+    </div>
+    </div>

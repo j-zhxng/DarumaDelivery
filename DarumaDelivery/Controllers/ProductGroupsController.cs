@@ -10,87 +10,87 @@ using DarumaDelivery.Models;
 
 namespace DarumaDelivery.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductGroupsController : Controller
     {
         private readonly DarumaDeliveryDB _context;
 
-        public ProductsController(DarumaDeliveryDB context)
+        public ProductGroupsController(DarumaDeliveryDB context)
         {
             _context = context;
         }
 
-        // GET: Products
+        // GET: ProductGroups
         public async Task<IActionResult> Index()
         {
-              return _context.Product != null ? 
-                          View(await _context.Product.ToListAsync()) :
-                          Problem("Entity set 'DarumaDeliveryDB.Product'  is null.");
+              return _context.ProductGroup != null ? 
+                          View(await _context.ProductGroup.ToListAsync()) :
+                          Problem("Entity set 'DarumaDeliveryDB.ProductGroup'  is null.");
         }
 
-        // GET: Products/Details/5
+        // GET: ProductGroups/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.ProductGroup == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.ProductID == id);
-            if (product == null)
+            var productGroup = await _context.ProductGroup
+                .FirstOrDefaultAsync(m => m.ProductGroupID == id);
+            if (productGroup == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View(productGroup);
         }
 
-        // GET: Products/Create
+        // GET: ProductGroups/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Products/Create
+        // POST: ProductGroups/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductGroupID,ProductID,ProductGroupTitle,ProductGroupDescription")] ProductGroup productGroup)
         {
             if (!ModelState.IsValid)
             {
-                _context.Add(product);
+                _context.Add(productGroup);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(productGroup);
         }
 
-        // GET: Products/Edit/5
+        // GET: ProductGroups/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.ProductGroup == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
-            if (product == null)
+            var productGroup = await _context.ProductGroup.FindAsync(id);
+            if (productGroup == null)
             {
                 return NotFound();
             }
-            return View(product);
+            return View(productGroup);
         }
 
-        // POST: Products/Edit/5
+        // POST: ProductGroups/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductGroupID,ProductID,ProductGroupTitle,ProductGroupDescription")] ProductGroup productGroup)
         {
-            if (id != product.ProductID)
+            if (id != productGroup.ProductGroupID)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace DarumaDelivery.Controllers
             {
                 try
                 {
-                    _context.Update(product);
+                    _context.Update(productGroup);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(product.ProductID))
+                    if (!ProductGroupExists(productGroup.ProductGroupID))
                     {
                         return NotFound();
                     }
@@ -115,49 +115,49 @@ namespace DarumaDelivery.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(productGroup);
         }
 
-        // GET: Products/Delete/5
+        // GET: ProductGroups/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.ProductGroup == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.ProductID == id);
-            if (product == null)
+            var productGroup = await _context.ProductGroup
+                .FirstOrDefaultAsync(m => m.ProductGroupID == id);
+            if (productGroup == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View(productGroup);
         }
 
-        // POST: Products/Delete/5
+        // POST: ProductGroups/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Product == null)
+            if (_context.ProductGroup == null)
             {
-                return Problem("Entity set 'DarumaDeliveryDB.Product'  is null.");
+                return Problem("Entity set 'DarumaDeliveryDB.ProductGroup'  is null.");
             }
-            var product = await _context.Product.FindAsync(id);
-            if (product != null)
+            var productGroup = await _context.ProductGroup.FindAsync(id);
+            if (productGroup != null)
             {
-                _context.Product.Remove(product);
+                _context.ProductGroup.Remove(productGroup);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductExists(int id)
+        private bool ProductGroupExists(int id)
         {
-          return (_context.Product?.Any(e => e.ProductID == id)).GetValueOrDefault();
+          return (_context.ProductGroup?.Any(e => e.ProductGroupID == id)).GetValueOrDefault();
         }
     }
 }
