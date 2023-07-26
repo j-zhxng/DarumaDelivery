@@ -1,9 +1,12 @@
 ﻿using DarumaDelivery.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace DarumaDelivery.Controllers
 {
+    [Authorize(Roles ="Member")]
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

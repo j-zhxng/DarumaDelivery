@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using DarumaDelivery.Areas.Identity.Data;
+namespace RegisterUser
+
 {
-public class Program
-{
+    public class Program
+    { 
     public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
