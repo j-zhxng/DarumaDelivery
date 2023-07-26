@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "DarumaDelivery";
 }
-<<title>DarumaDelivery</title>
+<title>DarumaDelivery</title>
 <style>
     h1.left {
         line-height: 100px;
@@ -17,7 +17,8 @@
 
     h1 {
         background-color: firebrick;
-        color: ghostwhite
+        color: ghostwhite;
+        font-family:Chiller;
     }
 
     h1 {
@@ -30,6 +31,7 @@
 </style>
 
 <div class="container container-fluid">
+    <h1 class="double">DarumaDelivery</h1>
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
 
@@ -40,7 +42,7 @@
         </div>
 
         <div class="carousel-inner">
-            ***
+            
             <div class="carousel-item active">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK5xjihZrcCzEM17nsGzSenxty4_nY4L22Wg&usqp=CAU" alt="r0" class="rounded-3" style="width:1255px; height:500px;" ;position:center">
             </div>
@@ -63,37 +65,7 @@
 
 </div>
 
-<div class=" container mt-3">
-    <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/'">Home</button>
-    <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/Home/Shop'">Shop</button>
-    <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/Home/Privacy'">Privacy</button>
-    <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/Home/Contacts'">Contacts</button>
-    <button type="button" class="btn btn-danger btn-lg" onclick="document.location = 'https://localhost:7094/Home/About'">About us</button>
-    <button type="button" class="btn btn-danger btn-lg" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-    <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <button type="submit">Login</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="rgs"> <a href="#">Register</a></span>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-        </form>
-    </div>
-</div>
 
 
 
