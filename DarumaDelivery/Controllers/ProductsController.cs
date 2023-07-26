@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DarumaDelivery.Areas.Identity.Data;
 using DarumaDelivery.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DarumaDelivery.Controllers
 {
@@ -44,7 +45,7 @@ namespace DarumaDelivery.Controllers
 
             return View(product);
         }
-
+        [Authorize]
         // GET: Products/Create
         public IActionResult Create()
         {
