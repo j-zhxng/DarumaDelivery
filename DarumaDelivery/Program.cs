@@ -63,30 +63,31 @@ namespace RegisterUser
             }
             using (var scope = app.Services.CreateScope())
             {
-               var userManager =
-                    scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-                
-                    string email = "admin@admin.com";
-                    string password = "Test1234";
+                var userManager =
+                     scope.ServiceProvider.GetRequiredService<UserManager<DarumaDeliveryUser>>();
 
-                    if (await userManager.FindByEmailAsync(email) == null)
-                    {
-                        var user = new IdentityUser();
-                        user.UserName = email;
-                        user.Email = email;
-                        user.EmailConfirmed = true;
+                string email = "admin@admin.com";
+                string password = "Test1234";
+
+                if (await userManager.FindByEmailAsync(email) == null)
+                {
+                    var user = new DarumaDeliveryUser();
+                    user.UserName = email;
+                    user.Email = email;
+                    user.EmailConfirmed = true;
 
 
                     await userManager.CreateAsync(user, password);
-                        await userManager.AddToRoleAsync(user, "Admin");
-                    }
+                    await userManager.AddToRoleAsync(user, "Admin");
                 }
+
 
                 app.Run();
 
             }
         }
     }
+}
 
 
         
