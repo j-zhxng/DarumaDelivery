@@ -55,7 +55,7 @@ namespace RegisterUser
                 foreach (var role in roles)
                 {
 
-                    if (!await roleManager.RoleExistsAsync(role))
+                    if (await roleManager.RoleExistsAsync(role))
                         await roleManager.CreateAsync(new IdentityRole(role));
 
                 }
@@ -65,9 +65,9 @@ namespace RegisterUser
             {
                 var userManager =
                      scope.ServiceProvider.GetRequiredService<UserManager<DarumaDeliveryUser>>();
-
+                string UserName = "Admin";
                 string email = "admin@admin.com";
-                string password = "Test1234";
+                string password = "Test1234,";
 
                 if (await userManager.FindByEmailAsync(email) == null)
                 {
@@ -82,9 +82,9 @@ namespace RegisterUser
                 }
 
 
-                app.Run();
+               
 
-            }
+            } app.Run();
         }
     }
 }
