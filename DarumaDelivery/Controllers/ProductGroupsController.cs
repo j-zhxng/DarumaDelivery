@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DarumaDelivery.Areas.Identity.Data;
 using DarumaDelivery.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DarumaDelivery.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class ProductGroupsController : Controller
     {
         private readonly DarumaDeliveryDB _context;

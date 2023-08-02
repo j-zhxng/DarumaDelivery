@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DarumaDelivery.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class ProductsController : Controller
     {
         private readonly DarumaDeliveryDB _context;
@@ -57,7 +58,7 @@ namespace DarumaDelivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID, ProductTitle, ProductDescription, ProductPrice, ProductQuantity")] Product product)
         {
             if (!ModelState.IsValid)
             {
@@ -89,7 +90,7 @@ namespace DarumaDelivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID, ProductTitle, ProductDescription, ProductPrice, ProductQuantity")] Product product)
         {
             if (id != product.ProductID)
             {

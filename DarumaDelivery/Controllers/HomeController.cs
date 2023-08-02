@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace DarumaDelivery.Controllers
 {
-    [Authorize(Roles ="Admin, Manager, Member")]
+    [Authorize]
 
     public class HomeController : Controller
     {
