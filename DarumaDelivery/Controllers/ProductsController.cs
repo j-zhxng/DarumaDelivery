@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DarumaDelivery.Areas.Identity.Data;
 using DarumaDelivery.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace DarumaDelivery.Controllers
 {
-    [Authorize(Roles = "Admin, Manager")]
     public class ProductsController : Controller
     {
         private readonly DarumaDeliveryDB _context;
@@ -46,7 +44,7 @@ namespace DarumaDelivery.Controllers
 
             return View(product);
         }
-        [Authorize]
+
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -58,9 +56,9 @@ namespace DarumaDelivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID, ProductTitle, ProductDescription, ProductPrice, ProductQuantity")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID,ProductTitle,ProductDescription,ProductPrice,ProductQuantity")] Product product)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
@@ -90,14 +88,14 @@ namespace DarumaDelivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID, ProductTitle, ProductDescription, ProductPrice, ProductQuantity")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductTitle,ProductDescription,ProductPrice,ProductQuantity")] Product product)
         {
             if (id != product.ProductID)
             {
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {

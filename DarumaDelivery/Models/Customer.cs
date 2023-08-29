@@ -26,13 +26,13 @@ namespace DarumaDelivery.Models
             public string Email { get; set; }
 
         public string ShippingAddress { get; set; }
-
-            public DateTime RegisterID { get; set; }
-
+        public DateTime RegisterID { get; set; }
 
 
 
-            public DateTime DOB { get; set; }
+
+
+        public DateTime DOB { get; set; }
 
 
 
