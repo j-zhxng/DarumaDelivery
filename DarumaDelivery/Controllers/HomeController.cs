@@ -24,6 +24,10 @@ namespace DarumaDelivery.Controllers
         {
             return View();
         }
+        public IActionResult SignatureTonkotsu()
+        {
+            return View();
+        }
         public IActionResult Contacts()
         {
             return View();
