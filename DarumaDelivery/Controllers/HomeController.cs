@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace DarumaDelivery.Controllers
 {
-    [Authorize]
+    
 
     public class HomeController : Controller
     {
@@ -24,7 +24,24 @@ namespace DarumaDelivery.Controllers
         {
             return View();
         }
+        
         public IActionResult SignatureTonkotsu()
+        {
+            return View();
+        }
+        public IActionResult OhMyHot()
+        {
+            return View();
+        }
+        public IActionResult SoyChicken()
+        {
+            return View();
+        }
+        public IActionResult SpicyMiso()
+        {
+            return View();
+        }
+        public IActionResult VegeMiso()
         {
             return View();
         }
