@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DarumaDelivery.Areas.Identity.Data;
 using DarumaDelivery.Models;
+using System.Drawing.Printing;
 
 namespace DarumaDelivery.Controllers
 {
@@ -58,6 +59,16 @@ namespace DarumaDelivery.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProductID,ProductTitle,ProductDescription,ProductPrice,ProductQuantity")] Product product)
         {
+            if(product.ProductQuantity <= 0)
+            {
+                ModelState.AddModelError("", "Quantity cannot be less than 0");
+                return View(product);
+            }
+            if (product.ProductPrice <= 0)
+            {
+                ModelState.AddModelError("", "Price cannot be less than $0.00");
+                return View(product);
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(product);
@@ -94,7 +105,16 @@ namespace DarumaDelivery.Controllers
             {
                 return NotFound();
             }
-
+            if (product.ProductQuantity <= 0)
+            {
+                ModelState.AddModelError("", "Quantity cannot be less than 0");
+                return View(product);
+            }
+            if (product.ProductPrice <= 0)
+            {
+                ModelState.AddModelError("", "Price cannot be less than $0.00");
+                return View(product);
+            }
             if (ModelState.IsValid)
             {
                 try
