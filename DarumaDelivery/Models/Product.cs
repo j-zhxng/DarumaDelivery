@@ -16,7 +16,7 @@ namespace DarumaDelivery.Models
         public decimal ProductPrice { get; set; }
 
         public int ProductQuantity { get; set; }
-        public List<>
+       
    
     }
 }
