@@ -13,9 +13,10 @@ namespace DarumaDelivery.Models
         [Display(Name="Description")]
         public string ProductDescription { get; set; }
 
-        public int ProductPrice { get; set; }
+        public decimal ProductPrice { get; set; }
 
         public int ProductQuantity { get; set; }
-
+        public List<>
+   
     }
 }
