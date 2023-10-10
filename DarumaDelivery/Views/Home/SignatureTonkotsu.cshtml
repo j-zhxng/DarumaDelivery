@@ -7,38 +7,48 @@
 <h1>Signature Tonkotsu Chashu</h1>
 <img src="" />
 <div>
-    <h2>Protein</h2>
-    <input type="radio">Pork Chashu</>
-    <input type="radio">Chicken Chashu</>
-    <input type="radio">Tofu</>
-    <input type="radio">None</>
+    <form>
+        <h4>Protein</h4>
+        <input type="radio" id="pork" name="protein_type" value="Pork"><label for="pork">Pork Chashu</label>
+        <input type="radio" id="chicken" name="protein_type" value="Chicken"><label for="chicken">Chicken Chashu</label>
+        <input type="radio" id="tofu" name="protein_type" value="Tofu"><label for="tofu">Tofu</label>
+        <input type="radio" id="none" name="protein_type" value="None"><label for="none">None</label>
+    </form>
 </div>
 <div>
-    <h2>Extra Protein</h2>
-    <input type="checkbox">+40g Pork Chashu[+$5.00]</>
-    <input type="checkbox">+40g Chicken Chashu[+$5.00]</>
-    <input type="checkbox">+9pc Tofu</>
+    <form>
+        <h4>Extra Protein</h4>
+        <input type="checkbox" id="expork" name="exprotein_type" value="exPork"><label for="expork">+40g Pork Chashu[+$5.00]</label>
+        <input type="checkbox" id="exchicken" name="exprotein_type" value="exChicken"><label for="exchicken">+40g Chicken Chashu[+$5.00]</label>
+        <input type="checkbox" id="extofu" name="exprotein_type" value="exTofu"><label for="extofu">+9pc Tofu[]</label>
+        <input type="checkbox" id="exnone" name="exprotein_type" value="exNone"><label for="exnone">None</label>
+    </form>
 </div>
 <div>
-    <h2>Spice Level</h2>
-    <input type="radio">Non-Spicy</>
-    <input type="radio">Mild</>
-    <input type="radio">Medium</>
-    <input type="radio">Hot</>
-    <input type="radio">Extra Hot!</>
-    <input type="radio">Extra Extra Hot!!!</>
+    <form>
+        <h4>Spice Level</h4>
+        <input type="radio" id="nspicy" name="spicelvl" value="Nspicy"><label for="nspice"> Non-Spicy</></label>
+        <input type="radio" id="mild" name="spicelvl" value="Mild"><label for="mild">Mild</label>
+        <input type="radio" id="med" name="spicelvl" value="Med"><label for="med">Medium</label>
+        <input type="radio" id="hot" name="spicelvl" value="Hot"><label for="hot">Hot</label>
+        <input type="radio" id="xhot" name="spicelvl" value="Xhot"><label for="xhot">Extra Hot!</label>
+        <input type="radio" id="xxhot" name="spicelvl" value="Xxhot"><label for="xxhot">Extra Extra Hot!!!</label>
+    </form>
 </div>
 <div>
-    <h2>Spice Type</h2>
-    <input type="radio">Spicy Mix</>
-    <input type="radio">Spicy Oil</>
+    <form>
+        <h2>Spice Type</h2>
+        <input type="radio" id="spicem" name="spicetype" value="Spicem"><label for="spicem"> Mix</label>
+        <input type="radio" id="spiceo" name="spicetype" value="Spiceo"><label for="spiceo">Spicy Oil</label>
+    </form>
 </div>
 <div>
-    <h2>Remove?</h2>
-    <input type="checkbox">Kikurage(Fungus)</>
-    <input type="checkbox">Roquette(Greens)</>
-    <input type="checkbox">Sesame seeds</>
-    
+    <form>
+        <h2>Remove?</h2>
+        <input type="checkbox" id="fungus" name="remove" value="Fungus"><label for="fungus">Kikurage(Fungus)</label>
+        <input type="checkbox" id="greens" name="remove" value="Greens"><label for="greens">Roquette(Greens)</label>
+        <input type="checkbox" id="sesame" name="remove" value="Sesame"><label for="greens">Sesame seeds</label>
+    </form>>
 </div>@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
