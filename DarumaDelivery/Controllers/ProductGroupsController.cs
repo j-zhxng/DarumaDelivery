@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DarumaDelivery.Controllers
 {
-    [Authorize(Roles = "Admin, Manager")]
+    [Authorize(Roles = "Admin")]
     public class ProductGroupsController : Controller
     {
         private readonly DarumaDeliveryDB _context;
