@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using DarumaDelivery.Areas.Identity.Data;
 using DarumaDelivery.Models;
 using System.Drawing.Printing;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DarumaDelivery.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class ProductsController : Controller
     {
         private readonly DarumaDeliveryDB _context;

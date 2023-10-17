@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace DarumaDelivery.Models
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class Product
     {
 
@@ -13,8 +15,10 @@ namespace DarumaDelivery.Models
         [Display(Name="Description")]
         public string ProductDescription { get; set; }
 
+        [Display(Name = "Price")]
         public decimal ProductPrice { get; set; }
 
+        [Display(Name = "Quantity")]
         public int ProductQuantity { get; set; }
        
    

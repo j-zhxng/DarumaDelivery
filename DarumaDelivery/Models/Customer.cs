@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DarumaDelivery.Models
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class Customer
     {
             public int CustomerID { get; set; }
