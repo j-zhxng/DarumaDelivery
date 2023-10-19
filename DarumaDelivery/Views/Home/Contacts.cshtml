@@ -80,7 +80,7 @@
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
             <div class="mb-3">
-                <label for="pwd">Password:</label>
+                <label for="pwd">Query:</label>
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
             </div>
             <div class="form-check mb-3">
@@ -88,7 +88,7 @@
                     <input class="form-check-input" type="checkbox" name="remember"> Remember me
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+           <a asp-controller="Home" asp-action="Index"> <button type="submit" class="btn btn-primary">Submit</button> </a>
         </form>
     </div>
 </body>

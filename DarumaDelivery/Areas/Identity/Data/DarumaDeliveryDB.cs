@@ -27,5 +27,5 @@ public class DarumaDeliveryDB : IdentityDbContext<DarumaDeliveryUser>
 
     public DbSet<DarumaDelivery.Models.Product>? Product { get; set; }
 
-    public DbSet<DarumaDelivery.Models.ProductGroup>? ProductGroup { get; set; }
+
 }
