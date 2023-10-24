@@ -8,13 +8,13 @@ namespace DarumaDelivery.Models
     public class Customer
     {
             public int CustomerID { get; set; }
+        [Display(Name = "Last Name")]
 
 
 
-
-            public string LastName { get; set; }
-        [Display(Name ="Last Name")]
-            public string FirstName { get; set; }
+        public string LastName { get; set; }
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
 
             [NotMapped]
             public string FullName
@@ -23,16 +23,17 @@ namespace DarumaDelivery.Models
             }
 
 
-
-            public string Email { get; set; }
-
+       
+        public string Email { get; set; }
+        [Display(Name = "Shipping Address")]
         public string ShippingAddress { get; set; }
+        [Display(Name = "Register ID")]
         public int RegisterID { get; set; }
 
 
 
 
-
+        [Display(Name = "Date of Birth")]
         public DateTime DOB { get; set; }
 
 
