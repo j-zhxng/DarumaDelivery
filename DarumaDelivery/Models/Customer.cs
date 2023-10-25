@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,7 +8,8 @@ namespace DarumaDelivery.Models
     [Authorize(Roles = "Admin, Manager")]
     public class Customer
     {
-            public int CustomerID { get; set; }
+      
+        public int CustomerID { get; set; }
         [Display(Name = "Last Name")]
 
 
