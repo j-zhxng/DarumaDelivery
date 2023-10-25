@@ -16,7 +16,7 @@ namespace DarumaDelivery.Models
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-            [NotMapped]
+            [NotMapped] 
             public string FullName
             {
                 get { return FirstName + "" + LastName; }
