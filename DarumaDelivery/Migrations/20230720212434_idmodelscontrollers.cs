@@ -19,7 +19,7 @@ namespace DarumaDelivery.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ShippingAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RegisterID = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RegisterID = table.Column<int>(type: "int", nullable: false),
                     DOB = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
