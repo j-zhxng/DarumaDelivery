@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DarumaDelivery.Models
 {
-    [Authorize(Roles = "Admin, Manager")]
+    [Authorize(Roles = "Admin")]
     public class Product
     {
 
